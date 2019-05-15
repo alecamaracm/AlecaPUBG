@@ -1,0 +1,211 @@
+{
+  "manifest_version": 1,
+  "type": "WebApp",
+  "meta": {
+    "name": "AlecaPUBG",
+    "version": "0.0.2",
+    "minimum-overwolf-version": "0.77.10",
+    "author": "Alejandro Cabrerizo",
+    "icon": "IconMouseOver.png",
+    "launcher_icon": "icon.ico",
+    "icon_gray": "IconMouseNormal.png",
+    "description": "AlecaLOL now in PUBG!"
+  },
+  "permissions": [
+    "Hotkeys",
+    "Media",
+    "GameInfo",
+    "Streaming",
+    "LogitechLed",
+    "Extensions",
+    "VideoCaptureSettings",
+    "DesktopStreaming",
+    "FileSystem"
+  ],
+
+  "data": {
+    "hotkeys": {
+      "alecapubg_showhide": {
+        "title": "Show/Hide stats",
+        "action-type": "custom",
+        "default": "Ctrl+G"
+      },
+      "alecapubg_heatmap_showhide": {
+        "title": "Show/Hide landing heatmap (In-game only)",
+        "action-type": "custom",
+        "default": "Ctrl+H"
+      },
+      "alecapubg_replays_showhide": {
+        "title": "Show/Hide replays",
+        "action-type": "custom",
+        "default": "Ctrl+B"
+      }
+    },
+    "start_window": "BackGround",
+    "windows": {
+      "BackGround": {
+        "file": "web/background.html",
+        "is_background_page": true,
+        "dev_tools_window_style": true
+      },
+      "Main": {
+        "file": "web/main.html",
+        "transparent": true,
+        "size": {
+          "width": 1194,
+          "height": 753
+        },
+        "min_size": {
+          "width": 1194,
+          "height": 753
+        },
+        "start_position": {
+          "top": 170,
+          "left": 393
+        },
+        "dev_tools_window_style": true,
+        "show_in_taskbar": true,
+        "in_game_only": false,
+        "block_top_window_navigation": true,
+        "clickthrough": false,
+        "grab_focus_on_desktop": true
+      },
+      "Loader": {
+        "file": "web/loader.html",
+        "transparent": true,
+        "size": {
+          "width": 447,
+          "height": 577
+        },
+        "start_position": {
+          "top": 200,
+          "left": 766
+        },
+        "min_size": {
+          "width": 447,
+          "height": 577
+        },
+        "dev_tools_window_style": true,
+        "show_in_taskbar": true,
+        "in_game_only": true,
+        "block_top_window_navigation": true,
+        "clickthrough": false
+      },
+      "Heatmap": {
+        "file": "web/heatmap.html",
+        "transparent": true,
+        "size": {
+          "width": 942,
+          "height": 661
+        },
+        "min_size": {
+          "width": 942,
+          "height": 661
+        },
+        "start_position": {
+          "top": 200,
+          "left": 519
+        },
+        "block_top_window_navigation": true,
+        "dev_tools_window_style": true,
+        "show_in_taskbar": true,
+        "in_game_only": false,
+        "clickthrough": false,
+        "grab_focus_on_desktop": true
+      },
+      "Replays": {
+        "file": "web/replays.html",
+        "mute": false,
+        "block_top_window_navigation": true,
+        "transparent": true,
+        "size": {
+          "width": 1014,
+          "height": 870
+        },
+        "min_size": {
+          "width": 1014,
+          "height": 870
+        },
+        "start_position": {
+          "top": 100,
+          "left": 409
+        },
+        "dev_tools_window_style": true,
+        "show_in_taskbar": true,
+        "in_game_only": false,
+        "clickthrough": false,
+        "grab_focus_on_desktop": true
+      },
+      "Settings": {
+        "file": "web/welcome.html",
+        "transparent": true,
+        "size": {
+          "width": 1281,
+          "height": 536
+        },
+        "min_size": {
+          "width": 1281,
+          "height": 536
+        },
+        "start_position": {
+          "top": 271,
+          "left": 350
+        },
+        "clickthrough": false,
+        "block_top_window_navigation": true,
+        "dev_tools_window_style": true,
+        "show_in_taskbar": true,
+        "in_game_only": false,
+        "override_on_update": true,
+        "grab_keyboard_focus": true,
+        "grab_focus_on_desktop": true
+      },
+      "Notification": {
+        "file": "web/notification.html",
+        "transparent": true,
+        "size": {
+          "width": 410,
+          "height": 136
+        },
+        "min_size": {
+          "width": 410,
+          "height": 136
+        },
+        "max_size": {
+          "width": 410,
+          "height": 136
+        },
+        "start_position": {
+          "top": 100,
+          "left": 0
+        },
+        "dev_tools_window_style": true,
+        "show_in_taskbar": false,
+        "in_game_only": true,
+        "topmost": true,
+        "override_on_update": true,
+        "clickthrough": true
+      }
+    },
+    "extra-objects": {
+      "AlecaPUBGWrapper": {
+        "file": "NET/AlecaPUBGClientLib.dll",
+        "class": "AlecaPUBGClientLib.OverwolfWrapper"
+      }
+    },
+    "game_events": [ 10906 ],
+    "game_targeting": {
+      "type": "dedicated",
+      "game_ids": [ 10906 ]
+    },
+    "launch_events": [
+      {
+        "event": "GameLaunch",
+        "event_data": {
+          "game_ids": [ 10906 ]
+        }
+      }
+    ]
+
+  }
+}

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>ed03a5fe-7e9b-44b7-a2ac-0aa2b430d4c7</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>OverwolfProject</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Dist\NET\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\maps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Dist\IconMouseNormal.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\IconMouseOver.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\manifest.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\css\base.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\css\heatmap\heatmap.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\css\loader\loader.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\css\main\main.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\css\replays\replays.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\css\toastify.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\css\welcome\welcome.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Beaufort-Bold.ttf" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Beaufort-Bold.woff" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Beaufort-Italic.ttf" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Beaufort-Italic.woff" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Beaufort-Regular.ttf" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Beaufort-Regular.woff" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Spiegel-Regular.ttf" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Spiegel-Regular.woff" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\AlecaPUBG-logo.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\error.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\1.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\10.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\11.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\12.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\2.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\3.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\4.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\5.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\6.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\7.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\8.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Final\9.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\Group 5.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\heatmap.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\logo-square.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\logo.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\overwolf-logo.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\p-logo-large.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\p-logo.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\placeholder.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\rankings\0.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\rankings\1.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\rankings\2.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\rankings\3.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\rankings\4.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\rankings\5.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\rankings\6.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\rankings\7.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\rankings\8.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\replay.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\settings.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\background.html" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\heatmap.html" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\loader.html" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\main.html" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\notification.html" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\replays.html" />
+    <Content Include="$(MSBuildThisFileDirectory)Dist\web\welcome.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Beaufort-Bold.woff2" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Beaufort-Italic.woff2" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Beaufort-Regular.woff2" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\fonts\Spiegel-Regular.woff2" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\arrow.svg" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\img\svg\sprite.svg" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\background.js" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\heatmap\heatmap.js" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\heatmap\heatmapCanvas.js" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\heatmap\heatmapCanvasBar.js" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\loader\loader.js" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\main\main.js" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\misc.js" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\notification\notification.js" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\OverwolfPlugin.js" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\replays\replays.js" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\toastify.js" />
+    <None Include="$(MSBuildThisFileDirectory)Dist\web\assets\js\welcome\welcome.js" />
+  </ItemGroup>
+</Project>

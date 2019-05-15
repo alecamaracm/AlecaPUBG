@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+    <title>AlecaPUBG</title>
+
+    <!-- JS files -->
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
+    <script src="assets/js/toastify.js"></script>
+    <script src="assets/js/misc.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/welcome/welcome.css" />
+    <link rel="stylesheet" href="assets/css/toastify.css" />
+</head>
+
+<body style="user-select: none;">
+    <div class="content">
+        <header onmousedown="dragMove();">
+            <div class="window-controls-group">
+                <button class="window-control" onclick="showSupport()">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_support" />
+                    </svg>
+                </button>
+
+                <button class="window-control" onclick="overwolf.windows.getMainWindow().showSettings();">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_settings" />
+                    </svg>
+                </button>
+
+                <button class="window-control" onclick="minimize()">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_minimize" />
+                    </svg>
+                </button>
+
+                <button class="window-control window-control-close" onclick="shouldClose();">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_close" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="outer-container">
+                <div class="welcome-container">
+                    <div class="welcome-header">
+                        <figure class="welcome-logo">
+                            <img src="assets/img/AlecaPUBG-logo1.png" alt="AlecaPUBG Logo">
+                        </figure>
+
+                        <h1 class="welcome-title">Aleca<span>PUBG</span></h1>
+                    </div>
+
+                    <div class="w-warning">
+                        You need to enter your data first!
+                    </div>
+
+                    <div class="welcome-content">
+                        <div class="w-moto">
+                            <div class="w-moto-text" style="text-align: center;padding-right: 25px;">
+                                <p><span style="color: #2a88ff;font-weight: bold;">AlecaPUBG</span> is ready to be used!
+                                </p>
+                                <p style="margin-bottom: 25px;">Enter your <span>PUBG username</span> below and start a
+                                    new
+                                    game!</p>
+
+                                <p style="">To show/hide the overlay use <span id="hotkeySpan"
+                                        style="color: gold;font-weight: bold;">Ctrl+G</span></p>
+                            </div>
+                            <div class="w-moto-screenshot">
+                                <img src="assets/img/main.PNG" alt="">
+                            </div>
+                        </div>
+
+                        <div class="w-form">
+                            <!-- <div class="w-form-content"> -->
+                            <div class="w-input-group">
+                                <label for="username" class="w-label">PUBG Username</label>
+                                <input type="text" class="w-input" id="username" placeholder="(Caps sensitive!)">
+                            </div>
+
+                            <div title="Low spec mode will decrease the recording resolution to 720p">
+                                <h3 title="Low spec mode will decrease the recording resolution to 720p" class="w-heading">
+                                    Low
+                                    spec mode</h3>
+
+                                <div class="w-radio-wrap"
+                                    title="Low spec mode will decrease the recording resolution to 720p">
+                                    <div class="w-radio-group">
+                                        <input type="radio" name="mode" id="low-spec-off" class="w-input-radio" checked>
+                                        <label for="low-spec-off" class="w-label-radio">Off</label>
+                                    </div>
+                                    <div class="w-radio-group"
+                                        title="Low spec mode will decrease the recording resolution to 720p">
+                                        <input type="radio" name="mode" id="low-spec-on" class="w-input-radio">
+                                        <label for="low-spec-on" class="w-label-radio">On</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+
+
+                            <button type="submit" class="w-submit" onclick="shouldClose();">Done</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Discord & Support link -->
+                <div class="side-container">
+                    <iframe src="https://discordapp.com/widget?id=577673186934652929&theme=dark" width="350"
+                        height="500" allowtransparency="true" frameborder="0">
+                    </iframe>
+
+
+                    <!-- Insert Support link here -->
+                    <a class="support-link" onclick="alert('F.A.Q is not finished yet, but it will be soon :D');">
+                        <div class="w-support-img">
+                            <img src="assets/img/icons8-help-50.png" alt="question mark">
+                        </div>
+
+                        <div class="w-support-text">
+                            <p><strong>AlecaPUBG support link</strong></p>
+                            <p>F.A.Q. and contact form</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Discord & Support link -->
+
+            </div>
+
+        </main>
+
+        <script src="assets/js/welcome/welcome.js"></script>
+        <!-- <script>
+        // Test toast
+        Toastify({
+            text: "This is a test Toast to test toastify.js",
+            gravity: "bottom",
+            duration: 3000,
+            backgroundColor: "linear-gradient(to right, #7A0015, #FF002C)"
+        }).showToast();
+    </script> -->
+    </div>
+</body>
+
+</html>

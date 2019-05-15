@@ -1,0 +1,720 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.replays-container {
+  width: 1015px;
+  height: 840px;
+}
+
+.replays-content {
+  width: 100%;
+  display: flex;
+}
+
+.replays-games-container {
+  width: 235px;
+  height: 780px;
+  overflow: hidden;
+
+  position: relative;
+}
+
+.replays-games {
+  width: 100%;
+  height: 720px;
+  overflow-y: scroll;
+
+  position: absolute;
+  top: 60px;
+  left: 0;
+  border-bottom: 3px solid black;
+}
+
+.replays-games::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.replays-box-1 {
+  width: 235px;
+  height: 60px;
+  padding: 6px;
+  background: linear-gradient(180deg, #525050 0%, rgba(99, 99, 99, 0.97) 100%);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+}
+
+.replays-box {
+  width: 100%;
+  height: 60px;
+  padding: 6px;
+
+  background: #fff;
+  border: 1px solid #000000;
+  transition: background 0.2s linear;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.replays-box:hover {
+  background: #add7f6;
+  cursor: pointer;
+}
+
+/* Replays-box has 3 additional classes */
+/* 1. clicked - marks the active box */
+/* 2. disabled - marks disabled box */
+/* 3. hidden - hides box */
+
+.replays-box.clicked {
+  background: rgb(88, 127, 185);
+}
+
+.replays-box.clicked:hover {
+  pointer-events: none;
+  background: rgb(88, 127, 185);
+}
+
+.replays-box.clicked .replays-place {
+  color: rgb(193, 211, 255);
+  font-size: 24px;
+}
+
+.replays-box.clicked .replays-game-mode,
+.replays-box.clicked .replays-box-year {
+  color: #fff;
+}
+
+.replays-box.clicked .replays-box-time {
+  color: #dfedf7;
+}
+
+.replays-box.disabled {
+  pointer-events: none;
+  background: rgba(205, 218, 255, 0.5);
+}
+
+.replays-box.hidden {
+  display: none;
+}
+
+.replays-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.replays-box-icon {
+  width: 45px;
+  height: 45px;
+  margin-right: 9px;
+
+  background: #c4c4c4;
+  border: 1px solid #000000;
+}
+
+.replays-box-icon img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+}
+
+.replays-box-content {
+  flex-grow: 1;
+}
+
+.replays-box-content > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.replays-place {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.replays-game-mode {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  color: #5c5c5c;
+}
+
+.replays-box-year {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  color: #525252;
+}
+
+.replays-box-time {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  color: #397cac;
+}
+
+.replays-warning-icon {
+  margin-right: auto;
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+.replays-warning-icon.hidden {
+  display: none;
+}
+
+.replays-warning-icon img {
+  width: 20px;
+  height: auto;
+}
+
+.replays-screen {
+  flex-shrink: 0;
+  flex-grow: 1;
+  background: rgba(65, 75, 102, 0.5);
+  border: 2px solid rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 35px;
+  color: #fff;
+
+  position: relative;
+}
+
+.replays-screen-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.replays-footer {
+  position: relative;
+  height: 60px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  padding: 0 14px;
+}
+
+.replays-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(220, 220, 220, 0.36), rgba(220, 220, 220, 0.36)), url(../../img/bg-dark.jpg);
+  background-size: cover;
+  background-position: bottom center;
+  box-shadow: inset 0px 8px 18px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.replays-footer > div {
+  z-index: 100;
+  align-self: center;
+}
+
+.replays-map {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+
+.replays-map > span:first-child {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-decoration-line: underline;
+  color: rgb(212, 212, 212);
+}
+
+.replays-map-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.replays-placed {
+  position: absolute;
+  top: 10px;
+  left: 285px;
+
+  display: flex;
+  align-items: center;
+}
+
+.replays-placed-num {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 37px;
+  color: #ff8a00;
+  display: block;
+  margin-right: 6px;
+}
+
+.replays-placed-mode {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #f8f8f8;
+  text-transform: capitalize;
+}
+
+.replays-killed-distance {
+  position: absolute;
+  top: 12px;
+  left: 540px;
+
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+}
+
+.replays-killed,
+.replays-distance,
+.replays-date {
+  display: flex;
+  align-items: center;
+}
+
+.replays-killed {
+  margin-right: 36px;
+}
+
+.replays-killed-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  display: block;
+}
+
+.replays-killed-number {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: #e0e0e0;
+}
+
+.replays-distance-icon {
+  width: 26.84px;
+  height: 30px;
+  margin-right: 3px;
+  display: block;
+}
+
+.replays-distance-number {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: #e0e0e0;
+}
+
+.replays-date {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.replays-date-year {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 28px;
+  color: #ffffff;
+  display: block;
+  margin-right: 11px;
+}
+
+.replays-date-time {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 23px;
+  color: #79c7ff;
+}
+
+/* Loading */
+.loading {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 94px;
+  height: 109px;
+  background: #ffffff;
+  border-radius: 45px 45px 4px 4px;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+}
+
+.loading.active {
+  display: block;
+}
+
+.loading > div:nth-child(2) {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  position: absolute;
+  bottom: 2px;
+  left: 5px;
+}
+
+.loading-spinner {
+  width: 79px;
+  height: 73px;
+  overflow: hidden;
+  transform: translate(6px, 5px);
+}
+
+.loading-spinner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* map styles */
+.map-overlay {
+  width: 100%;
+  height: 100%;
+}
+
+.replays-screen-content {
+  background-image: url(../../img/maps/Miramar.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*
+  Apply .hidden to .replays-screen-content to hide the map and video
+*/
+.replays-screen-content.hidden {
+  display: none;
+}
+
+.replays-map-markers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.replays-popup {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../../img/alecaLOL_background.jpg);
+
+  border-radius: 19px;
+  padding: 5px 15px 15px 15px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+
+.replays-popup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.replays-popup.hidden {
+  display: none;
+}
+
+.replays-video {
+  height: 351px;
+  width: 624px;
+  border: 1px solid #000000;
+}
+
+.replays-video-info {
+  position: relative;
+  height: 70px;
+  width: 550px;
+}
+
+.replays-event {
+  position: absolute;
+  top: 17px;
+  left: 7px;
+}
+
+.replays-event > span {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.replays-popup-close {
+  position: absolute;
+  top: 27px;
+  right: 28px;
+}
+
+.popup-close-btn {
+  cursor: pointer;
+}
+
+.popup-close-btn svg {
+  fill: #fff;
+  transition: all 0.2s linear;
+}
+
+.popup-close-btn:hover svg {
+  transform: rotate(90deg);
+}
+
+/* Map Pin */
+.map-pin {
+  position: absolute;
+  display: inline-block;
+}
+
+.map-pin.hidden {
+  display: none;
+}
+
+.map-pin-svg {
+  fill: rgb(250, 40, 40);
+  transition: all 0.1s linear;
+}
+
+.pin-event-type {
+  padding: 2px;
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  top: 3px;
+  left: 13px;
+  background: #fff;
+  border-radius: 50%;
+
+  transition: all 0.1s linear;
+}
+
+.map-pin:hover .pin-event-type {
+  transform: scale(1.2);
+}
+.map-pin:hover .map-pin-svg {
+  fill: rgb(255, 140, 140);
+}
+
+.replays-kill,
+.replays-death,
+.replays-damage,
+.landing,
+.enter-leave-vehicle,
+.endgame {
+  position: absolute;
+  top: 17px;
+  right: 2px;
+
+  font-size: 22px;
+}
+
+.replays-kill {
+  display: flex;
+  flex-direction: row;
+}
+
+.replays-event-target {
+  margin-right: 120px;
+}
+
+.replays-damage {
+  display: flex;
+  flex-direction: row;
+}
+
+.replays-warning {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 713px;
+  height: 91px;
+  background: url(../../img/alecaLOL_background.jpg);
+  border: 5px solid rgba(217, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 31px;
+  padding: 10px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.replays-warning.hidden {
+  display: none;
+}
+
+.damage,
+.player {
+  margin-right: 40px;
+}
+
+.replays-kill.hidden,
+.replays-death.hidden,
+.replays-damage.hidden,
+.landing.hidden,
+.enter-leave-vehicle.hidden,
+.endgame.hidden {
+  display: none;
+}
+
+.replays-legend {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  width: 211px;
+  height: 63px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  padding-left: 14px;
+
+  background: url(../../img/alecaLOL_background.jpg);
+  border-radius: 10px;
+}
+
+.replays-legend::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+.replays-legend p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+.replays-flight,
+.replays-vehicle {
+  display: flex;
+  flex-direction: row;
+}
+
+.replays-flight div,
+.replays-vehicle div {
+  width: 40px;
+  height: 5px;
+
+  transform: translate(20px, 5px);
+}
+
+.replays-flight div {
+  background-color: #007dc4;
+}
+
+.replays-vehicle div {
+  background-color: #fff;
+  transform: translate(22px, 5px);
+}
+
+.replays-tip {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    width: 320px;
+    height: auto;
+    padding: 7px;
+    background: #fff;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 100000;
+    border: 3\[3;
+}
+
+.replays-tip.hidden {
+  display: none;
+}
+
+.replays-tip p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+  margin-left: -8px;
+}
+
+.replays-tip-close {
+  cursor: pointer;
+}
+
+.replays-tip-close svg {
+  transition: all 0.2s linear;
+}
+
+.replays-tip-close:hover svg {
+  transform: rotate(90deg);
+}

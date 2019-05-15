@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+    <title>AlecaPUBG</title>
+
+    <!-- JS files -->
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
+    <script src="assets/js/toastify.js"></script>
+    <script src="assets/js/misc.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/loader/loader.css" />
+    <link rel="stylesheet" href="assets/css/toastify.css" />
+  </head>
+
+  <body style="user-select: none;">
+    <div class="content" >
+      <header  onmousedown="dragMove();">
+        <div class="window-controls-group">
+          <button class="window-control" onclick="showSupport()">
+            <svg class="svg-icon-fill">
+              <use xlink:href="assets/img/svg/sprite.svg#window-control_support" />
+            </svg>
+          </button>
+
+          <button class="window-control" onclick="overwolf.windows.getMainWindow().showSettings();">
+            <svg class="svg-icon-fill">
+              <use xlink:href="assets/img/svg/sprite.svg#window-control_settings" />
+            </svg>
+          </button>
+
+          <button class="window-control" onclick="minimize()">
+            <svg class="svg-icon-fill">
+              <use xlink:href="assets/img/svg/sprite.svg#window-control_minimize" />
+            </svg>
+          </button>
+
+          <button class="window-control window-control-close" onclick="closeThisPls();">
+            <svg class="svg-icon-fill">
+              <use xlink:href="assets/img/svg/sprite.svg#window-control_close" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <div class="loader-container">
+          <div class="loader-header">
+            <div class="header-logo">
+              <img src="assets/img/AlecaPUBG-logo1.png" alt="AlecaPUBG Logo" />
+            </div>
+
+            <h1 class="header-title">Aleca<span>PUBG</span></h1>
+          </div>
+
+          <div class="loader-texts">
+            <p class="loader-text-1">Loading stats for you game...</p>
+            <p class="loader-text-2">Use <span id="hotkey">Ctrl+Alt+A</span> to toggle the UI</p>
+          </div>
+
+          <div class="loader-bar">
+            <canvas id="progress-bar" class="loading-bar"></canvas>
+          </div>
+
+          <div class="loader-ad-box">
+            <div class="ad-default">
+              <div class="ad-logo">
+                <img src="assets/img/p-logo-large.png" width="220px" alt="" />
+              </div>
+            </div>
+
+            <div class="ad" id="ad-div"></div>
+          </div>
+
+          <div class="loader-footer">
+            <p class="loader-footer-text">
+              Ads help us keep our servers running.
+            </p>
+            <p class="loader-footer-text">
+              Thank you for your understanding. Enjoy your game :D
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <!-- <script>
+            // Test toast
+            Toastify({
+                text: "This is a test Toast to test toastify.js",
+                gravity: "bottom",
+                duration: 3000,
+                backgroundColor: "linear-gradient(to right, #7A0015, #FF002C)"
+            }).showToast();
+        </script> -->
+    </div>
+
+    <script src="assets/js/loader/loader.js"></script>
+  </body>
+</html>

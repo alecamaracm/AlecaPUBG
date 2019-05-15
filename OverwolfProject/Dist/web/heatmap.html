@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+    <title>AlecaPUBG</title>
+
+    <!-- JS files -->
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
+    <script src="assets/js/toastify.js"></script>
+    <script src="assets/js/misc.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/heatmap/heatmap.css" />
+    <link rel="stylesheet" href="assets/css/toastify.css" />
+</head>
+
+<body style="user-select: none;">
+    <div class="content">
+        <header onmousedown="dragMove();">
+            <div class="window-controls-group">
+                <button class="window-control" onclick="showSupport()">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_support" />
+                    </svg>
+                </button>
+
+                <button class="window-control" onclick="overwolf.windows.getMainWindow().showSettings();">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_settings" />
+                    </svg>
+                </button>
+
+                <button class="window-control" onclick="minimize()">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_minimize" />
+                    </svg>
+                </button>
+
+                <button class="window-control window-control-close" onclick="hide();">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_close" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="heatmap-container">
+                <!-- The warning box -->
+                <div class="heatmap-warning hidden" style="padding-top: 25px;">
+                    Start a new game to see the landing heatmap here!
+                </div>
+
+                <div class="heatmap-map-box mapMiramar">
+
+                    <canvas class="heatMapCanvas" id="heatmap"></canvas>
+
+                    <div class="heatmap-loading-box active">
+                        <h3 class="heatmap-loading-title">Loading, please wait...</h3>
+
+                        <div class="heatmap-loading">
+                            <canvas id="heatmap-loader"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-right">
+                    <div class="player-list">
+                        <div class="player active" index="0">
+                            <div class="player-color player-color-1"></div>
+                            <p class="player-name">Username 1</p>
+                        </div>
+                        <div class="player active" index="1">
+                            <div class="player-color player-color-2"></div>
+                            <p class="player-name">Username 2</p>
+                        </div>
+                        <div class="player active" index="2">
+                            <div class="player-color player-color-3"></div>
+                            <p class="player-name">Username 3</p>
+                        </div>
+                        <div class="player active" index="3">
+                            <div class="player-color player-color-4"></div>
+                            <p class="player-name">Username 4</p>
+                        </div>
+                    </div>
+
+                    <div class="current-map-info" style="background: url(assets/img/bg-dark.jpg);background-repeat: zoom;background-size: 300px 133px;border: 10px;border-color: black;">
+                        <h3 id="mapTitle" class="current-map-title" style="color:white; margin-left: 7px;">Miramar</h3>
+
+                        <p class="map-size"><span>Size: </span> <span>8km x 8km (Large)</span></p>
+
+                        <p class="map-fact">Did you know that more than 500 matches were analyzed to display this map?
+                        </p>
+                    </div>
+
+                    <div class="ad-heatmap-box">
+                        <div class="ad-heatmap-default">
+                            <div class="ad-logo">
+                                <img src="assets/img/p-logo-large.png" width="190px" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="ad-heatmap"></div>
+                    </div>
+
+                    <div class="heatmap-footer">
+                        <p class="heatmap-footer-text">
+                            Ads help us keep our servers running.
+                        </p>
+                        <p class="heatmap-footer-text">
+                            Thank you for your understanding. Enjoy your game :D
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- <script>
+            // Test toast
+            Toastify({
+                text: "This is a test Toast to test toastify.js",
+                gravity: "bottom",
+                duration: 3000,
+                backgroundColor: "linear-gradient(to right, #7A0015, #FF002C)"
+            }).showToast();
+        </script> -->
+    </div>
+
+    <script src="assets/js/heatmap/heatmapCanvas.js"></script>
+    <script src="assets/js/heatmap/heatmap.js"></script>
+    <script src="assets/js/heatmap/heatmapCanvasBar.js"></script>
+
+</body>
+
+</html>

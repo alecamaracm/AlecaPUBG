@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+    <title>AlecaPUBG</title>
+
+    <!-- JS files -->
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
+    <script src="assets/js/toastify.js"></script>
+    <script src="assets/js/misc.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/replays/replays.css" />
+    <link rel="stylesheet" href="assets/css/toastify.css" />
+</head>
+
+<body style="user-select: none;">
+    <div class="content">
+        <header onmousedown="dragMove();">
+            <div class="window-controls-group">
+                <button class="window-control" onclick="showSupport()">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_support" />
+                    </svg>
+                </button>
+
+                <button class="window-control" onclick="overwolf.windows.getMainWindow().showSettings();">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_settings" />
+                    </svg>
+                </button>
+
+                <button class="window-control" onclick="minimize()">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_minimize" />
+                    </svg>
+                </button>
+
+                <button class="window-control window-control-close" onclick="closeWindow();">
+                    <svg class="svg-icon-fill">
+                        <use xlink:href="assets/img/svg/sprite.svg#window-control_close" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="replays-container">
+                <div class="replays-content">
+                    <div class="replays-games-container">
+
+                        <div class="replays-box-1">
+                            <h2 class="replays-title">Last games</h2>
+                        </div>
+                        <div class="replays-games">
+
+                            <div class="loading" id="loading1">
+                                <div class="loading-spinner">
+                                    <img src="assets/img/ajax-loader.gif" alt="">
+                                </div>
+                                <div>Loading</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="replays-screen">
+                        Choose a game to see its replay
+
+
+                        <!-- The tip displayed in the top right corner -->
+                        <div class="replays-tip" id="replaysTip" onclick="hideTip();">
+                            <p><strong>Tip:</strong> A new replay will ONLY appear once the match has finished!</p>
+                            <button class="replays-tip-close" id="closeTip">
+                                <svg>
+                                    <use href="assets/img/svg/close.svg#close" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Apply .hidden to .replays-screen-content to hide the map and video -->
+                        <div class="replays-screen-content hidden">
+                            <canvas id="mapOverlay" class="map-overlay"></canvas>
+
+                            <!-- div that contains map markers -->
+                            <div class="replays-map-markers">
+                                <div class="map-pin hidden" onclick="markerClicked(event);">
+                                    <svg class="map-pin-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="53"
+                                        height="53" viewBox="0 0 32 32">
+                                        <use href="assets/img/svg/pin.svg#pin" />
+                                    </svg>
+                                    <img src="assets/img/icons/landed.png" class="pin-event-type">
+                                </div>
+                            </div>
+
+                            <!-- Video + additional info -->
+                            <div class="replays-popup" id="replaysPopup">
+                                <!-- Additional info container -->
+                                <div class="replays-video-info">
+                                    <div class="replays-event">
+                                        <span class="event-type">Event Type</span>
+                                    </div>
+
+                                    <div class="replays-kill hidden" id="kill">
+                                        <div class="replays-event-target replays-killed" >
+                                            <span class="replays-killed-icon">
+                                                <img src="assets/img/target.png" alt="">
+                                            </span>
+                                            <span class="replays-killed-number">0</span>
+                                        </div>
+
+                                        <div class="replays-event-distance replays-distance">
+                                            <span class="replays-distance-icon">
+                                                <img src="assets/img/distance.png" alt="">
+                                            </span>
+                                            <span class="replays-distance-number">3.5Km</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="replays-death hidden" id="death">
+                                        <div class="killed-by">
+                                            <span>Name:</span>
+                                            <span class="killed-by-name"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="replays-damage hidden">
+                                        <div class="damage">
+                                            <span>dmg:</span>
+                                            <span class="damage-dealt"></span>
+                                        </div>
+
+                                        <div class="player">
+                                            <span>player:</span>
+                                            <span class="player-name"></span>
+                                        </div>
+
+                                        <div class="headshot">
+                                            <span>headshot:</span>
+                                            <span class="was-headshot"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="landing hidden"></div>
+
+                                    <div class="enter-leave-vehicle hidden">
+                                        <div class="vehicle-name-wrap">
+                                            <span>Vehicle Name:</span>
+                                            <span class="vehicle-name"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="endgame hidden">
+                                        <div class="score">score</div>
+                                    </div>
+                                </div>
+
+                                <div class="replays-popup-close">
+                                    <button class="popup-close-btn" id="closePopup">
+                                        <svg>
+                                            <use href="assets/img/svg/close.svg#close" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Video -->
+                                <div class="replays-video">
+                                    <video width="624" height="351" autoplay controls src="">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Legend, displayed in the bottom right corner -->
+                            <div class="replays-legend">
+                                <div class="replays-flight">
+                                    <p>Plane / Free flight</p>
+                                    <div></div>
+                                </div>
+                                <div class="replays-vehicle">
+                                    <p>Walking / Vehicle</p>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The warning box -->
+                        <div class="replays-warning hidden">
+                            Clips and detailed timeline data are only available for games played with AlecaPUBG
+                            running!
+                        </div>
+
+                        <div class="loading" id="loading2">
+                            <div class="loading-spinner">
+                                <img src="assets/img/ajax-loader.gif" alt="">
+                            </div>
+                            <div>Loading</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="replays-footer">
+                    <div class="replays-map">
+                        <span>Map:</span>
+                        <span class="replays-map-name">-------</span>
+                    </div>
+
+                    <div class="replays-placed">
+                        <span class="replays-placed-num">#??</span>
+                        <span class="replays-placed-mode">-------</span>
+                    </div>
+
+                    <div class="replays-killed-distance">
+                        <div class="replays-killed">
+                            <span class="replays-killed-icon" title="Players killed">
+                                <img src="assets/img/target.png" alt="">
+                            </span>
+                            <span class="replays-killed-number">-</span>
+                        </div>
+
+                        <div class="replays-distance">
+                            <span class="replays-distance-icon" title="Distance travelled">
+                                <img src="assets/img/distance.png" alt="">
+                            </span>
+                            <span class="replays-distance-number">---</span>
+                        </div>
+                    </div>
+
+                    <div class="replays-date">
+                        <span class="replays-date-year">--/--/----</span>
+                        <span class="replays-date-time">--:--</span>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- <script>
+        // Test toast
+        Toastify({
+            text: "This is a test Toast to test toastify.js",
+            gravity: "bottom",
+            duration: 3000,
+            backgroundColor: "linear-gradient(to right, #7A0015, #FF002C)"
+        }).showToast();
+    </script> -->
+
+        <div class="replays-box hidden" id="listGameToCopy" onclick="elementClicked(event)">
+            <div class="replays-box-icon">
+                <img src="" alt="">
+            </div>
+
+            <div class="replays-box-content">
+                <div>
+                    <span class="replays-place">#23</span>
+                    <span class="replays-warning-icon hidden" title="This game wasn't played with AlecaPUBG active!">
+                        <img src="assets/img/warning-icon.png" alt="">
+                    </span>
+                    <span class="replays-game-mode">duo</span>
+                </div>
+                <div>
+                    <span class="replays-box-year">10/10/2019</span>
+                    <span class="replays-box-time">13:45</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pin to copy -->
+        <div class="map-pin hidden" id="mapPinToCopy">
+            <svg class="map-pin-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="52" height="52"
+                viewBox="0 0 32 32">
+                <use href="assets/img/svg/pin.svg#pin" />
+            </svg>
+
+
+            <img src="" class="pin-event-type">
+        </div>
+
+    </div>
+
+    <script src="assets/js/replays/replays.js"></script>
+
+    <script>
+        // Hide the popup
+        document.getElementById('closePopup').addEventListener('click', () => {
+            document.getElementById('replaysPopup').classList.add('hidden');
+            document.getElementsByClassName("replays-video")[0].firstElementChild.pause()
+        })
+
+        // Hide the tip
+        document.getElementById('closeTip').addEventListener('click', () => {
+            document.getElementById('replaysTip').classList.add('hidden');
+        })
+    </script>
+</body>
+
+</html>

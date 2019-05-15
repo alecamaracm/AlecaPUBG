@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>AlecaPUBG</title>
+
+  <!-- JS files -->
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" />
+  <script src="assets/js/toastify.js"></script>
+  <script src="assets/js/misc.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/main/main.css" />
+  <link rel="stylesheet" href="assets/css/toastify.css" />
+</head>
+
+<body style="user-select: none;">
+  <div class="content">
+    <header onmousedown="dragMove();">
+      <div class="window-controls-group">
+        <span style="text-align: left;position: absolute;width: 300px;left: 8px;top: 5px;font-family: 'Roboto', sans-serif;font-size: 16px;">Use <span style="font-weight:bold"id="main_hotkey">Ctrl+G</span> to toggle this UI (In-game)</span>
+        <button class="window-control" onclick="showSupport()">
+          <svg class="svg-icon-fill">
+            <use xlink:href="assets/img/svg/sprite.svg#window-control_support" />
+          </svg>
+        </button>
+
+        <button class="window-control" onclick="overwolf.windows.getMainWindow().showSettings();">
+          <svg class="svg-icon-fill">
+            <use xlink:href="assets/img/svg/sprite.svg#window-control_settings" />
+          </svg>
+        </button>
+
+        <button class="window-control" onclick="minimize()">
+          <svg class="svg-icon-fill">
+            <use xlink:href="assets/img/svg/sprite.svg#window-control_minimize" />
+          </svg>
+        </button>
+
+        <button class="window-control window-control-close" onclick="hide();">
+          <svg class="svg-icon-fill">
+            <use xlink:href="assets/img/svg/sprite.svg#window-control_close" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="main-container">
+        <div class="main-players">
+          <div class="main-players-default">
+            <p>Start a new game to see stats here</p>
+          </div>
+
+          <div class="main-player player-hidden">
+            <div class="main-player-img">
+              <img src="assets/img/Final/9.png" alt="" />
+            </div>
+            <div class="main-player-name">
+              <p>XxKaliZFxX</p>
+            </div>
+            <div class="main-player-stats">
+              <div class="main-section-1">
+                <div class="main-wins">
+                  <h4>Wins</h4>
+                  <p>601</p>
+                </div>
+                <div class="main-percent-s">
+                  <span>%</span>
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <title>arrow-thin-down</title>
+                    <path
+                      d="M9 16.172l-6.071-6.071-1.414 1.414 8.485 8.485 8.485-8.485-1.414-1.414-6.071 6.071v-16.172h-2z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="main-losses">
+                  <h4>Losses</h4>
+                  <p>2442</p>
+                </div>
+                <div class="main-percent">
+                  2.5%
+                </div>
+              </div>
+              <div class="main-section-2">
+                <p>
+                  <span>K/D</span>
+                  <span>3.75</span>
+                </p>
+                <p>
+                  <span>DMG</span>
+                  <span>166</span>
+                </p>
+              </div>
+              <div class="main-section-3">
+                <div class="main-rank-icon">
+                  <img src="assets/img/rankings/Experienced.png" alt="" />
+                </div>
+                <div>
+                  <div class="main-rank-name">Beginner</div>
+                  <div class="main-sp">1 SP</div>
+                </div>
+              </div>
+              <div class="main-section-4">
+                <p class="main-rank-title">The accurate</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="main-player player-hidden">
+            <div class="main-player-img">
+              <img src="assets/img/Final/11.png" alt="" />
+            </div>
+            <div class="main-player-name player-current">
+              <p>alecamar</p>
+            </div>
+            <div class="main-player-stats">
+              <div class="main-section-1">
+                <div class="main-wins">
+                  <h4>Wins</h4>
+                  <p>601</p>
+                </div>
+                <div class="main-percent-s">
+                  <span>%</span>
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <title>arrow-thin-down</title>
+                    <path
+                      d="M9 16.172l-6.071-6.071-1.414 1.414 8.485 8.485 8.485-8.485-1.414-1.414-6.071 6.071v-16.172h-2z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="main-losses">
+                  <h4>Losses</h4>
+                  <p>2442</p>
+                </div>
+                <div class="main-percent">
+                  2.5%
+                </div>
+              </div>
+              <div class="main-section-2">
+                <p><span>K/D</span><span>3.75</span></p>
+                <p><span>DMG</span><span>166</span></p>
+              </div>
+              <div class="main-section-3">
+                <div class="main-rank-icon">
+                  <img src="assets/img/rankings/Expert.png" alt="" />
+                </div>
+                <div>
+                  <div class="main-rank-name">Experienced</div>
+                  <div class="main-sp">2567sp</div>
+                </div>
+              </div>
+              <div class="main-section-4">
+                <p class="main-rank-title">The accurate</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="main-player player-hidden">
+            <div class="main-player-img">
+              <img src="assets/img/Final/3.png" alt="" />
+            </div>
+            <div class="main-player-name">
+              <p>ghost14leboisa</p>
+            </div>
+            <div class="main-player-stats">
+              <div class="main-section-1">
+                <div class="main-wins">
+                  <h4>Wins</h4>
+                  <p>601</p>
+                </div>
+                <div class="main-percent-s">
+                  <span>%</span>
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <title>arrow-thin-down</title>
+                    <path
+                      d="M9 16.172l-6.071-6.071-1.414 1.414 8.485 8.485 8.485-8.485-1.414-1.414-6.071 6.071v-16.172h-2z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="main-losses">
+                  <h4>Losses</h4>
+                  <p>2442</p>
+                </div>
+                <div class="main-percent">
+                  2.5%
+                </div>
+              </div>
+              <div class="main-section-2">
+                <p><span>K/D</span><span>3.75</span></p>
+                <p><span>DMG</span><span>166</span></p>
+              </div>
+              <div class="main-section-3">
+                <div class="main-rank-icon">
+                  <img src="assets/img/rankings/Novice.png" alt="" />
+                </div>
+                <div>
+                  <div class="main-rank-name">Experienced</div>
+                  <div class="main-sp">2567sp</div>
+                </div>
+              </div>
+              <div class="main-section-4">
+                <p class="main-rank-title">The accurate</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="main-player player-hidden">
+            <div class="main-player-img">
+              <img src="assets/img/Final/12.png" alt="" />
+            </div>
+            <div class="main-player-name">
+              <p>MenInYouIII</p>
+            </div>
+            <div class="main-player-stats">
+              <div class="main-section-1">
+                <div class="main-wins">
+                  <h4>Wins</h4>
+                  <p>601</p>
+                </div>
+                <div class="main-percent-s">
+                  <span>%</span>
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <title>arrow-thin-down</title>
+                    <path
+                      d="M9 16.172l-6.071-6.071-1.414 1.414 8.485 8.485 8.485-8.485-1.414-1.414-6.071 6.071v-16.172h-2z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="main-losses">
+                  <h4>Losses</h4>
+                  <p>2442</p>
+                </div>
+                <div class="main-percent">
+                  2.5%
+                </div>
+              </div>
+              <div class="main-section-2">
+                <p><span>K/D</span><span>3.75</span></p>
+                <p><span>DMG</span><span>166</span></p>
+              </div>
+              <div class="main-section-3">
+                <div class="main-rank-icon">
+                  <img src="assets/img/rankings/Beginner.png" alt="" />
+                </div>
+                <div>
+                  <div class="main-rank-name">Experienced</div>
+                  <div class="main-sp">2567sp</div>
+                </div>
+              </div>
+              <div class="main-section-4">
+                <p class="main-rank-title">The accurate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-menu">
+          <!-- Disabled class for heatmap button .heatmap-disabled -->
+          <button class="main-menu-item main-menu-btn heatmap-disabled" onclick="heatmapClicked();">
+            <div class="main-menu-heatmap">
+              <img src="assets/img/heatmap.png" alt="" />
+            </div>
+
+            <h3 class="main-menu-item-title">Landing heatmap</h3>
+          </button>
+          <button class="main-menu-item main-menu-btn" onclick="replaysClicked();">
+            <div class="main-menu-replays-icon">
+              <img src="assets/img/replay.png" alt="" />
+            </div>
+
+            <h3 class="main-menu-item-title">Match replays</h3>
+          </button>
+
+
+
+          <button class="main-menu-item main-menu-btn" onclick="settingsClicked();">
+            <div class="main-menu-settings-icon">
+              <img src="assets/img/settings.png" alt="" />
+            </div>
+
+            <h3 class="main-menu-item-title">Settings</h3>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/main/main.js"></script>
+
+    <!-- <script>
+          // Test toast
+          Toastify({
+              text: "This is a test Toast to test toastify.js",
+              gravity: "bottom",
+              duration: 3000,
+              backgroundColor: "linear-gradient(to right, #7A0015, #FF002C)"
+          }).showToast();
+      </script> -->
+  </div>
+</body>
+
+</html>
