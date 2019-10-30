@@ -15,7 +15,7 @@ namespace AlecaPUBGServer
         public static Logger logger;
                
 
-        public static string PUBG_API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2ODc1NThhMC0xYTMyLTAxMzctM2YxNS00YjY2YTBmZmEwODkiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTUwOTkyNzUyLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImFsZWNhbG9sIn0.MrYy6aSZJls1Im9hejpUmfg6xBjjWueIbNvtG4RnFuQ";
+        public static string PUBG_API_KEY = "apiKey";
         public static ServiceStatus serviceStatus = ServiceStatus.NonInitialized;
         public static string serviceStatusString = "";
 
